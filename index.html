@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Scanning...</title>
   <style>
     body {
@@ -11,13 +12,23 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      min-height: 100vh;
+      min-height: 100svh;
       margin: 0;
+      padding: 16px;
+      box-sizing: border-box;
+    }
+
+    *, *::before, *::after {
+      box-sizing: inherit;
     }
 
     .terminal {
       text-align: center;
-      font-size: 24px;
+      font-size: clamp(16px, 4.5vw, 24px);
+      line-height: 1.35;
+      max-width: 42ch;
+      width: 100%;
     }
 
     .blink {
@@ -30,7 +41,7 @@
     }
 
     .progress {
-      width: 300px;
+      width: min(300px, 90vw);
       height: 10px;
       border: 1px solid #00ff00;
       margin-top: 20px;
